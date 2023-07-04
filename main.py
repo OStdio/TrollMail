@@ -13,7 +13,7 @@ from utils import MailIsReal
 init(autoreset=True)
 green = Fore.GREEN
 white = Fore.WHITE
-
+red = Fore.RED
 __version__ = "1.0.0"
 
 __banner__ = f"""
@@ -40,8 +40,8 @@ def main(mail: str, number=None) -> None:
     elif number != None:
         pass
     
-    if MailIsReal(mail=mail) is False:
-        stdout.write("[-] - Wrong email address")
+    if MailIsReal(mail=mail) == '@':
+        stdout.write(f"{red}[-] - Wrong email address")
         return
 
     sendAll(

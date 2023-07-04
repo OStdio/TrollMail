@@ -39,7 +39,7 @@ def send(mail: str, number: None, key: str) -> bool:
     print(f"{magenta}[!] - SENDING TO {key}")
 
     if status == 200:
-        print(f"{green}[+] - SENDED\n")
+        print(f"{green}[+] - SENT\n")
         return True
     
     print(f"{red}[-] - FAILED\n")
@@ -47,18 +47,10 @@ def send(mail: str, number: None, key: str) -> bool:
 
 # TODO: limitarlo a un numero de threads especifico
 def sendAll(mail: str, number: None) -> None:
-    threads: list = []
-
-    for key in get_dict(mail, number):
-
-        if key == "verniracristo" and number == None:
-            continue
-        thread = threading.Thread(
-            target=send,
-            args=(mail, number, key)
-        )
-        threads.append(thread)
+    threads: list = [threading.Thread(target=send, args=(mail, number, key)) for key in get_dict(mail, number)]
     
     for th in threads:
         th.start()
+    
+    for th in threads:
         th.join()

@@ -6,7 +6,7 @@ randomAPI: str = "https://random-data-api.com/api/v2/"
 def MailIsReal(mail: str) -> bool | str:
     """Check if mail is real or no with an advanced
     AI n Machine Learning Options data idk"""
-    if "@" in mail == True:
+    if "@" in mail:
         return True
     else:
         return "@" # holy shit albert einstein
