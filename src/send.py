@@ -25,21 +25,20 @@ headers = {
     'sec-ch-ua-platform': "Windows"
 }
 
-def send(mail: str, number: None, keys: list) -> bool:
+def send(mail: str, pages: list, number: int = 0,) -> None:
     """
-        True si es que el codigo de estado es 200
-        False en cualquier otro caso
+        Sends a POST request for each page in the list. 
     """
 
-    for key in keys:
-        data = get_dict(mail, number)[key]
+    for page in pages:
+        data = get_dict(mail, number)[page]
         status = requests.post(
             url=data[0],
             data=data[1],
             headers=headers
         ).status_code
 
-        print(f"{magenta}[!] - SENDING TO {key}")
+        print(f"{magenta}[!] - SENDING TO {page}")
 
         if status == 200:
             print(f"{green}[+] - SENT  {status}\n")
