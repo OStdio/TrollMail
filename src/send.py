@@ -25,11 +25,10 @@ headers = {
     'sec-ch-ua-platform': "Windows"
 }
 
-def send(mail: str, pages: list, number: int = 0,) -> None:
+def send(mail: str, number: int, pages: list) -> None:
     """
         Sends a POST request for each page in the list. 
     """
-
     for page in pages:
         data = get_dict(mail, number)[page]
         status = requests.post(
