@@ -26,13 +26,14 @@ __banner__ = f"""
 """
 
 def main(mail: str, number=None) -> None:
-
-    # No way you use this mail dog
-    if mail == "fosstdio@gmail.com":
+    # Mail checks
+    if not ("@" in mail and "." in mail) or mail == "fosstdio@gmail.com":
+        print(f"{red}[-] - Invalid email address")
         exit(1)
 
-    if not "@" in mail and not "." in mail:
-        print(f"{red}[-] - Wrong email address")
+    # Number checks
+    if number and not ("+" in number and " " in number):
+        print(f"{red}[-] - Invalid phone number")
         exit(1)
 
     send_all(
@@ -48,7 +49,7 @@ if __name__ == "__main__":
     
     # parser.add_argument('-t', '--threads', required=False,  TODO: limitar a un numero de threads especifico
     #                     help='Da Threads For Da Program')
-    
+
     parser.add_argument('-n', '--number', required=False, 
                         help="Victim's phone number. Make sure it is valid and it has the country code")
     
