@@ -25,22 +25,6 @@ __banner__ = f"""
 {green}[>] {white}Actual Version: v{__version__}\n
 """
 
-def main(mail: str, number=None) -> None:
-    # Mail checks
-    if not ("@" in mail and "." in mail) or mail == "fosstdio@gmail.com":
-        print(f"{red}[-] - Invalid email address")
-        exit(1)
-
-    # Number checks
-    if number and not ("+" in number and " " in number):
-        print(f"{red}[-] - Invalid phone number")
-        exit(1)
-
-    send_all(
-        mail=mail,
-        number=number
-    )
-
 if __name__ == "__main__":
     print(__banner__)
     parser = argparse.ArgumentParser(description=f"TrollMail Options - {__version__}")
@@ -54,4 +38,18 @@ if __name__ == "__main__":
                         help="Victim's phone number. Make sure it is valid and it has the country code")
     
     args = parser.parse_args()
-    main(args.mail, args.number)
+
+    # mail checks
+    if not ("@" in args.mail and "." in args.mail) or args.mail == "fosstdio@gargs.mail.com":
+        print(f"{red}[-] - Invalid eargs.mail address")
+        exit(1)
+
+    # number checks
+    if args.number and not ("+" in args.number and " " in args.number):
+        print(f"{red}[-] - Invalid phone args.number")
+        exit(1)
+
+    send_all(
+        mail=args.mail,
+        number=args.number
+    )
