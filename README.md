@@ -23,7 +23,7 @@ pip install -r requirements.txt
 despues corres el script con python
 
 ```bash
-python main.py 
+python3 -B src
 ```
 
 y te va aparecer esta pequeña ayuda indicandote los argumentos
@@ -41,7 +41,7 @@ los agumentos son los siguientes:
 ejemplo de como seria un ataque a un mail:
 
 ```bash
-python ./main.py -m johndoe@domain.com
+python3 -B src -m johndoe@domain.com
 ```
 
 ![atack](./img/atack.png)

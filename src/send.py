@@ -1,8 +1,11 @@
 # documento donde estaran las funciones para enviar los formularios con los datos
-import requests 
-import threading 
-from pages import get_dict
+import threading
+from typing import List
+
+import requests
 from colorama import Fore
+
+from pages import get_dict
 
 THREAD_LIMIT = 10
 
@@ -25,14 +28,14 @@ headers = {
     'sec-ch-ua-platform': "Windows"
 }
 
-def send(mail: str, number: int, pages: list) -> None:
+def send(mail: str, number: int, pages: List[str]) -> None:
     """
         Sends a POST request for each page in the list. 
     """
     for page in pages:
-        data = get_dict(mail, number)[page]
+        data = get_dict(email=mail, phone_number=str(number))[page]
         status = requests.post(
-            url=data[0],
+            url=str(data[0]),
             data=data[1],
             headers=headers
         ).status_code
@@ -45,8 +48,7 @@ def send(mail: str, number: int, pages: list) -> None:
             print(f"{red}[-] - FAILED  {status}\n")
 
 def send_all(email: str, phone_number: None, threads: int = 0) -> None:
-
-    keys = [key for key in get_dict(email, phone_number)]
+    keys = [key for key in get_dict(email=email, phone_number=str(phone_number))]
 
     if threads > len(keys):
         print(f"{red}[-] - ERROR: You cant have more than {THREAD_LIMIT} threads\n")
@@ -59,10 +61,10 @@ def send_all(email: str, phone_number: None, threads: int = 0) -> None:
     
     last_thread_index = THREAD_LIMIT - THREAD_LIMIT%threads - 1
     pages_per_thread = THREAD_LIMIT//threads
-    each_thread_content = []
+    each_thread_content: List[List[str]] = []
 
     # This is necessary to make it work
-    thread_list = []
+    thread_list: List[threading.Thread]= []
 
     for thread in range(threads):
         if thread == last_thread_index:
@@ -71,10 +73,11 @@ def send_all(email: str, phone_number: None, threads: int = 0) -> None:
             each_thread_content.append(keys[thread:(thread+pages_per_thread)])
 
     for thread_index, thread_content in enumerate(each_thread_content):
-        print(f"{magenta}[!] - STARTING #{thread_index} THREAD for {thread_content}")
-        thread = threading.Thread(target=send, args=(email, phone_number, thread_content,))
-        thread_list.append(thread)
-        thread.start()
+        print("{0}[!] - STARTING #{1} THREAD for {2}".format(magenta, thread_index+1, "".join(thread_content)))
+        thread = threading.Thread(target=send, args=(email, phone_number, thread_content,)) # type: ignore
+        thread_list.append(thread) # type: ignore
+        thread.start() # type: ignore
     
-    for thread in thread_list:
-        thread.join()
+    for thread in thread_list: # type: ignore
+        thread.join() # type: ignore
+ 

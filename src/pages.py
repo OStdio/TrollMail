@@ -1,18 +1,20 @@
 import random
+from typing import Any, Dict, List, Union
 
 password: str = "peneduro22"
 colombia_cities = ["Bogotá", "Medellín", "Cartagena", "Cali", "Barranquilla"]
 
 
-def get_dict(email: str, phone_number: str) -> dict:
+def get_dict(email: str, phone_number: str) -> Dict[str, List[Union[str, Dict[str, Any]]]]:
     """
     This function returns a dictionaire with all the needed data to fill every form for 
     each website.
       ['key'][0] = url
       ['key'][1] = form
     """
+
     return {
-        "brazino777":["https://brazino777.com/api/register_new", {
+        "brazino777": ["https://brazino777.com/api/register_new", {
             "bonus": "one_hundred_percent_on_first_deposit",
             "email": email,
             "login": email.split('@')[0],
@@ -153,6 +155,7 @@ def get_dict(email: str, phone_number: str) -> dict:
             "remember": True,
             "origin_url": "https://web.peruquiosco.pe/"
         }],
+        
         "wattpad": ["https://www.wattpad.com/signup?nextUrl=/home", {
             "signup-from": "new_landing_signup",
             "form-type": "",

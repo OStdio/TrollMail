@@ -1,9 +1,11 @@
 # TrollMail
-# authors: uhemn, lvoidi, NothinElse0
+# authors: uhemn, lvoidi, NothinElse0, 0x1ex
 # cli mode
 
 import argparse
+
 from colorama import Fore, init
+
 from send import send_all
 
 init(autoreset=True)
@@ -14,11 +16,11 @@ __version__ = "1.0.0"
 
 __banner__ = f"""
 {green}___________             .__  .__      _____         .__.__   
-\__    ___/______  ____ |  | |  |    /     \ _____  |__|  |  
-  |    |  \_  __ \/  _ \|  | |  |   /  \ /  \\\\__  \ |  |  |  
-  |    |   |  | \(  <_> )  |_|  |__/    Y    \/ __ \|  |  |__
-  |____|   |__|   \____/|____/____/\____|__  (____  /__|____/
-                                           \/     \/         
+\\__    ___/______  ____ |  | |  |    /     \\ _____  |__|  |  
+  |    |  \\_  __ \\/  _ \\|  | |  |   /  \\ /  \\\\__  \\ |  |  |  
+  |    |   |  | \\(  <_> )  |_|  |__/    Y    \\/ __ \\|  |  |__
+  |____|   |__|   \\____/|____/____/\\____|__  (____  /__|____/
+                                           \\/     \\/         
 {green}[>] {white}Troll people by logging them into thrash websites 
 {green}|
 {green}[>] {white}Created by: OStdio
