@@ -35,7 +35,7 @@ los agumentos son los siguientes:
 ```text
 -h (OPCIONAL) -> menu de ayuda
 -m (OBLIGATORIO) -> el mail a atacar
--n (OPCIONAL) -> el numero a ataca, este proporciona acceso a mas paginas
+-n (OPCIONAL) -> el numero a atacar, este proporciona acceso a más paginas
 ```
 
 ejemplo de como seria un ataque a un mail:
