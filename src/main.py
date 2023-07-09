@@ -19,7 +19,7 @@ __banner__ = f"""
   |    |   |  | \(  <_> )  |_|  |__/    Y    \/ __ \|  |  |__
   |____|   |__|   \____/|____/____/\____|__  (____  /__|____/
                                            \/     \/         
-{green}[>] {white}Trollea a la rasa x meil usando newlesters, formularios y logins 
+{green}[>] {white}Troll people by logging them into thrash websites 
 {green}|
 {green}[>] {white}Created by: OStdio
 {green}[>] {white}Actual Version: v{__version__}\n
