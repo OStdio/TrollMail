@@ -4,11 +4,12 @@ import threading
 from pages import get_dict
 from colorama import Fore
 
+THREAD_LIMIT = 10
+
 red: str = Fore.RED
 green: str = Fore.GREEN
 magenta: str = Fore.MAGENTA
 
-# headers que se van a enviar en la peticion post
 headers = {
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
     "Sec-Fetch-Dest": "document",
@@ -24,33 +25,58 @@ headers = {
     'sec-ch-ua-platform': "Windows"
 }
 
-def send(mail: str, number: None, key: str) -> bool:
+def send(mail: str, number: None, keys: list) -> bool:
     """
         True si es que el codigo de estado es 200
         False en cualquier otro caso
     """
-    data = get_dict(mail, number)[key]
-    status = requests.post(
-        url=data[0],
-        data=data[1],
-        headers=headers
-    ).status_code
 
-    print(f"{magenta}[!] - SENDING TO {key}")
+    for key in keys:
+        data = get_dict(mail, number)[key]
+        status = requests.post(
+            url=data[0],
+            data=data[1],
+            headers=headers
+        ).status_code
 
-    if status == 200:
-        print(f"{green}[+] - SENT\n")
-        return True
-    
-    print(f"{red}[-] - FAILED\n")
-    return False
+        print(f"{magenta}[!] - SENDING TO {key}")
 
-# TODO: limitarlo a un numero de threads especifico
-def send_all(mail: str, number: None) -> None:
-    threads: list = [threading.Thread(target=send, args=(mail, number, key)) for key in get_dict(mail, number)]
+        if status == 200:
+            print(f"{green}[+] - SENT  {status}\n")
+        else:
+            print(f"{red}[-] - FAILED  {status}\n")
+
+def send_all(email: str, phone_number: None, threads: int = 0) -> None:
+
+    keys = [key for key in get_dict(email, phone_number)]
+
+    if threads > len(keys):
+        print(f"{red}[-] - ERROR: You cant have more than {THREAD_LIMIT} threads\n")
+        exit(1)
     
-    for th in threads:
-        th.start()
+    # If the user don't choose the thread number, it will be automatically start a thread 
+    # for each page
+    elif not threads:
+        threads = len(keys)
     
-    for th in threads:
-        th.join()
+    last_thread_index = THREAD_LIMIT - THREAD_LIMIT%threads - 1
+    pages_per_thread = THREAD_LIMIT//threads
+    each_thread_content = []
+
+    # This is necessary to make it work
+    thread_list = []
+
+    for thread in range(threads):
+        if thread == last_thread_index:
+            each_thread_content.append(keys[thread:])
+        else:
+            each_thread_content.append(keys[thread:(thread+pages_per_thread)])
+
+    for thread_index, thread_content in enumerate(each_thread_content):
+        print(f"{magenta}[!] - STARTING #{thread_index} THREAD for {thread_content}")
+        thread = threading.Thread(target=send, args=(email, phone_number, thread_content,))
+        thread_list.append(thread)
+        thread.start()
+    
+    for thread in thread_list:
+        thread.join()

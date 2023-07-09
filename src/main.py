@@ -31,12 +31,17 @@ if __name__ == "__main__":
     parser.add_argument('-m', '--mail', required=True, 
                         help='The victim email. Make sure it is a valid mail.')
     
-    # parser.add_argument('-t', '--threads', required=False,  TODO: limitar a un numero de threads especifico
-    #                     help='Da Threads For Da Program')
+    parser.add_argument('-t', '--threads', required=False, 
+                         help="""
+Threads of the program, it will be automatically start a thread for each page
+in case it is not set.""")
 
     parser.add_argument('-n', '--number', required=False, 
-                        help="Victim's phone number. Make sure it is valid and it has the country code")
-    
+                        help="""
+Victim's phone number. Make sure it is valid and it has the country code.
+It should only have one blank space, it should look like this: +506 1193.
+This is to help the program get the country of the person.
+                        """)
     args = parser.parse_args()
 
     # mail checks
@@ -48,8 +53,12 @@ if __name__ == "__main__":
     if args.number and not ("+" in args.number and " " in args.number):
         print(f"{red}[-] - Invalid phone args.number")
         exit(1)
+    
+    if not args.threads:
+        args.threads = 0
 
     send_all(
-        mail=args.mail,
-        number=args.number
+        email=args.mail,
+        phone_number=args.number,
+        threads=int(args.threads)
     )

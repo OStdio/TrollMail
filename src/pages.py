@@ -6,6 +6,8 @@ colombia_cities = ["Bogotá", "Medellín", "Cartagena", "Cali", "Barranquilla"]
 
 def get_dict(email: str, phone_number: str) -> dict:
     """
+    This function returns a dictionaire with all the needed data to fill every form for 
+    each website.
       ['key'][0] = url
       ['key'][1] = form
     """
