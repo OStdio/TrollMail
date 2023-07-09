@@ -1,14 +1,10 @@
 # TrollMail
-# authors: uhemn, ivoidi, NothinElse0
-# mode cli
-# enjoy ;)
+# authors: uhemn, lvoidi, NothinElse0
+# cli mode
 
 import argparse
-import webbrowser
-from sys import stdout
 from colorama import Fore, init
-from send import sendAll
-from utils import MailIsReal
+from send import send_all
 
 init(autoreset=True)
 green = Fore.GREEN
@@ -30,35 +26,29 @@ __banner__ = f"""
 """
 
 def main(mail: str, number=None) -> None:
+
+    # No way you use this mail dog
     if mail == "fosstdio@gmail.com":
-        stdout.write("trolazo")
-        return
-    
-    elif "@fbi.gov" in mail:
-        webbrowser.open('https://www.youtube.com/watch?v=yJg-Y5byMMw&ab_channel=NoCopyrightSounds')
+        exit(1)
 
-    elif number != None:
-        pass
-    
-    if MailIsReal(mail=mail) == '@':
-        stdout.write(f"{red}[-] - Wrong email address")
-        return
+    if not "@" in mail and not "." in mail:
+        print(f"{red}[-] - Wrong email address")
+        exit(1)
 
-    sendAll(
+    send_all(
         mail=mail,
         number=number
     )
 
 if __name__ == "__main__":
-    stdout.write(__banner__)
-    # argumentos
+    print(__banner__)
     parser = argparse.ArgumentParser(description=f"TrollMail Options - {__version__}")
     parser.add_argument('-m', '--mail', required=True, 
-                        help='Da Viktim Mail jejeje')
+                        help='The victim email. Make sure it is a valid mail.')
     # parser.add_argument('-t', '--threads', required=False,  TODO: limitar a un numero de threads especifico
     #                     help='Da Threads For Da Program')
     parser.add_argument('-n', '--number', required=False, 
-                        help='Da Viktim Number')
+                        help="Victim's phone number. Make sure it is valid and it has the country code")
     
     args = parser.parse_args()
     main(args.mail, args.number)

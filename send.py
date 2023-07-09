@@ -46,7 +46,7 @@ def send(mail: str, number: None, key: str) -> bool:
     return False
 
 # TODO: limitarlo a un numero de threads especifico
-def sendAll(mail: str, number: None) -> None:
+def send_all(mail: str, number: None) -> None:
     threads: list = [threading.Thread(target=send, args=(mail, number, key)) for key in get_dict(mail, number)]
     
     for th in threads:
