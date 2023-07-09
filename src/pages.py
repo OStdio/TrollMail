@@ -1,11 +1,10 @@
-import random
 from typing import Any, Dict, List, Union
 
 password: str = "peneduro22"
 colombia_cities = ["Bogotá", "Medellín", "Cartagena", "Cali", "Barranquilla"]
 
 
-def get_dict(email: str, phone_number: str) -> Dict[str, List[Union[str, Dict[str, Any]]]]:
+def get_dict(email: str, phone_number: str) -> Dict[str, List[Union[Any, Dict[str, Any]]]]:
     """
     This function returns a dictionaire with all the needed data to fill every form for 
     each website.
@@ -22,46 +21,7 @@ def get_dict(email: str, phone_number: str) -> Dict[str, List[Union[str, Dict[st
             "currency": "MXN"
         }],
 
-        "veniracristo": ["https://www.veniracristo.org/comeuntochrist/api/forms", {
-            "firstName": "",
-            "lastName": "",
-            "email": email,
-            "subscriptions": "mDGLSPAInspirationSubscribed",
-            "country": "Costa Rica",
-            "locID": "106",
-            "countryISO3": "CRI",
-            "addr": "",
-            "city": "",
-            "state": "",
-            "zip": f"{random.randint(100, 100000)}",
-            "phoneCountryCode": "+506",
-            "phone": phone_number,
-            "phoneCountry": "cr",
-            "offerType": "meetWithMissionaries",
-            "customWhitelist": "true",
-            "formType": "request",
-            "lang": "spa",
-            "preferredLanguageId": "2",
-            "countryIso2": "undefined",
-            "successPageURL": "*!veniracristo!success!spa!published",
-            "cancelPageURL": "*!veniracristo!cancel!spa!published",
-            "formTopicId": "2c54b042-6c2c-4ed0-927e-2919b627a551",
-            "system_source": "ComeUntoChrist",
-            "submittingURL": "https://www.veniracristo.org/",
-            "pageTitle": "Bienvenido | veniracristo",
-            "offerId": "134",
-            "sourceId": "5502",
-            "offerType": "meetWithMissionaries",
-            "munchkinId": "",
-            "marketoToken": "", 
-            "domain": "www.veniracristo.org",
-            "offerDetails": """[{"description":"¿Cómo prefieres que te contactemos?","text":"¿Cómo prefieres que te contactemos?","type":"MULTI_SELECT","options":["Llamada telefónica","Mensaje de WhatsApp","Mensaje de texto"],"availableDate":"2020-01-13T15:00:00","endDate":"2024-12-31T23:59:59","userEditableOption":false,"missionaryEditable":true,"sortOrder":"8","locale":"spa","questionGuid":"8d544658-2c0f-4030-93e2-03e19c1996f5","selected":["Llamada telefónica","Mensaje de WhatsApp","Mensaje de texto"]},{"description":"Por favor, confirma - missionaries","text":"Por favor, confirma:","type":"MULTI_SELECT","options":["Entiendo que los misioneros se pondrán en contacto conmigo para responder a mis preguntas y compartir un mensaje edificante."],"availableDate":"2020-05-13T15:00:00","userEditableOption":false,"missionaryEditable":false,"sortOrder":"1","locale":"spa","questionGuid":"07ff6313-f364-4a18-8ff4-d5d25cb4ee7e","selected":["Entiendo que los misioneros se pondrán en contacto conmigo para responder a mis preguntas y compartir un mensaje edificante."]}]""",
-            "transactionId": "16870503377102267",
-            "hashed": "2908ec72",
-            "adobeVisitorId": "" ,
-            "MDCampaignId": "10",
-            "boncomCampaignId": "0"
-        }],
+        "veniracristo": ["https://www.veniracristo.org/comeuntochrist/api/forms", None],
 
         "graff-city": ["https://www.graff-city.com/register", {
             "form_identifier": "register",
@@ -155,7 +115,7 @@ def get_dict(email: str, phone_number: str) -> Dict[str, List[Union[str, Dict[st
             "remember": True,
             "origin_url": "https://web.peruquiosco.pe/"
         }],
-        
+
         "wattpad": ["https://www.wattpad.com/signup?nextUrl=/home", {
             "signup-from": "new_landing_signup",
             "form-type": "",
