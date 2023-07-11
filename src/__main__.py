@@ -49,12 +49,12 @@ This is to help the program get the country of the person.
 
     # mail checks
     if not ("@" in args.mail and "." in args.mail) or args.mail == "fosstdio@gargs.mail.com":
-        print(f"{red}[-] - Invalid eargs.mail address")
+        print(f"{red}[-] - Invalid mail address")
         exit(1)
 
     # number checks
     if args.number and not ("+" in args.number and " " in args.number):
-        print(f"{red}[-] - Invalid phone args.number")
+        print(f"{red}[-] - Invalid phone number")
         exit(1)
     
     if not args.threads:
