@@ -46,7 +46,6 @@ def send(mail: str, number: int, pages: List[str]) -> None:
             print(f"{red}[-] - FAILED  {status}\n")
 
 def send_all(email: str, phone_number: None, threads: int = 0) -> None:
-    
     keys = [key for key in get_dict(email=email, phone_number=str(phone_number))]
     limit = len(keys)
     if threads > len(keys):
@@ -58,11 +57,11 @@ def send_all(email: str, phone_number: None, threads: int = 0) -> None:
     elif not threads:
         threads = len(keys)
     
+    # Splits the pages for each page. 
     last_thread_index = limit - limit%threads - 1
     pages_per_thread = limit//threads
     each_thread_content: List[List[str]] = []
 
-    # This is necessary to make it work
     thread_list: List[threading.Thread]= []
 
     for thread in range(threads):
