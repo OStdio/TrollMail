@@ -1,6 +1,7 @@
 # TrollMail
 # authors: uhemn, lvoidi, NothinElse0, 0x1ex
-# cli mode
+# License: gpl 3.0
+# CLI Version
 
 import argparse
 
