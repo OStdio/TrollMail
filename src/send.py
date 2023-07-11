@@ -7,8 +7,6 @@ from colorama import Fore
 
 from pages import get_dict
 
-THREAD_LIMIT = 10
-
 red: str = Fore.RED
 green: str = Fore.GREEN
 magenta: str = Fore.MAGENTA
@@ -48,10 +46,11 @@ def send(mail: str, number: int, pages: List[str]) -> None:
             print(f"{red}[-] - FAILED  {status}\n")
 
 def send_all(email: str, phone_number: None, threads: int = 0) -> None:
+    
     keys = [key for key in get_dict(email=email, phone_number=str(phone_number))]
-
+    limit = len(keys)
     if threads > len(keys):
-        print(f"{red}[-] - ERROR: You cant have more than {THREAD_LIMIT} threads\n")
+        print(f"{red}[-] - ERROR: You cant have more than {limit} threads\n")
         exit(1)
     
     # If the user don't choose the thread number, it will be automatically start a thread 
@@ -59,8 +58,8 @@ def send_all(email: str, phone_number: None, threads: int = 0) -> None:
     elif not threads:
         threads = len(keys)
     
-    last_thread_index = THREAD_LIMIT - THREAD_LIMIT%threads - 1
-    pages_per_thread = THREAD_LIMIT//threads
+    last_thread_index = limit - limit%threads - 1
+    pages_per_thread = limit//threads
     each_thread_content: List[List[str]] = []
 
     # This is necessary to make it work
