@@ -1,18 +1,17 @@
-import bs4
 
 def venir_a_cristo_data(email: str, phone_number: str) -> dict:
 
-    country_iso3 = ''
-    country_id = ''
-    country_name = ''
-
     country_code, number = phone_number.split()
 
-    with open("src\country_codes.html", "r") as country:
+    with open("src\country_codes.txt", "r") as country:
         country_code = country_code.replace(" ", "")
         content = country.read()
-        soup = bs4.BeautifulSoup(content)
-        
+        countries = content.split("\n")
+        for country in countries:
+            country_iso3, country_number, country_name = country.split(":")
+            if country_number == country_code:
+                pass
+            
         print(country_name)
     return {
         "firstName": "Tom",
