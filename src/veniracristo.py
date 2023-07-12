@@ -1,4 +1,4 @@
-import re 
+import bs4
 
 def venir_a_cristo_data(email: str, phone_number: str) -> dict:
 
@@ -11,7 +11,8 @@ def venir_a_cristo_data(email: str, phone_number: str) -> dict:
     with open("src\country_codes.html", "r") as country:
         country_code = country_code.replace(" ", "")
         content = country.read()
-        country_name = re.findall(f'\<option class="undefined" data-value=".*" data-alpha3=".*" data-phone-code="{country_code}" data-twilio-enabled=".*" in-whitelist style=".*" value="\>*">(.*)\<\/option\>', content) 
+        soup = bs4.BeautifulSoup(content)
+        
         print(country_name)
     return {
         "firstName": "Tom",
