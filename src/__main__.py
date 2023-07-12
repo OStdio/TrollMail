@@ -1,5 +1,5 @@
 # TrollMail
-# authors: uhemn, lvoidi, NothinElse0, 0x1ex
+# authors: uhemn, lvoidi, n0thels3, 0x1ex
 # License: gpl 3.0
 # CLI Version
 
