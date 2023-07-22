@@ -87,7 +87,7 @@ def get_dict(email: str, phone_number: str) -> Dict[str, List[Union[Any, Dict[st
             "nws": "nwsl31"
         }],
 
-        "peruquiosco": ["https://id.tinypass.com/id/api/v1/identity/register/token?aid=pWgh0wFvpu&lang=es_PE&tbc={kpex}DfkoOBY3eLouEav7NQJ18RqO0qv5bxTWnO2JCC_8CDIQwPXvpzhEMD3YspZZwjPE", {
+        "peruquiosco": ["https://id.tinypass.com/id/api/v1/identity/register/token", {
             "first_name": "Elver",
             "last_name": "Gonmez",
             "email": email,
@@ -122,14 +122,20 @@ def get_dict(email: str, phone_number: str) -> Dict[str, List[Union[Any, Dict[st
             "form-type": "",
             "username": "jhonnnydoe",
             "email": email,
-            "new_password": "MikaelYordan666_",
-            "confirm_password": "MikaelYordan666_",
+            "new_password": password,
+            "confirm_password": password,
             "month": "09",
             "day": "17",
             "year": "1996"
         }],
         "quora": ["https://es.quora.com/graphql/gql_POST?q=SignupEmailBasicInfoModal_sendSignupEmailConfirmationEmail_Mutation", {
-            "email": email
+              "queryName": "SignupEmailBasicInfoModal_sendSignupEmailConfirmationEmail_Mutation",
+            "variables": {
+                "email": email
+            },
+            "extensions": {
+                "hash": "5d6b42b7f164aeb88e0861471a72144093610a04c507617fa510d2b68c2e9dda"
+            }       
         }],
         "nacc-th": ["https://itas.nacc.go.th/account/register", {
             "Email": email,
@@ -213,5 +219,10 @@ def get_dict(email: str, phone_number: str) -> Dict[str, List[Union[Any, Dict[st
             'estado': 'California',
             'ciudad': 'Los+Angeles',
             'celular': phone_number  
+        }],
+
+        "coding-problems": ["https://www.dailycodingproblem.com/api2/subscribe", {
+            "email": email,
+            "referrer":None
         }]
     } 
