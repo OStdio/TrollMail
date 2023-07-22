@@ -21,8 +21,6 @@ def get_dict(email: str, phone_number: str) -> Dict[str, List[Union[Any, Dict[st
             "currency": "MXN"
         }],
 
-        "veniracristo": ["https://www.veniracristo.org/comeuntochrist/api/forms", None],
-
         "graff-city": ["https://www.graff-city.com/register", {
             "form_identifier": "register",
             "csrf_token": "l2ATYO8I0Dx1ffm",
