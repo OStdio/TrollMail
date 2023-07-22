@@ -11,7 +11,6 @@ def get_dict(email: str, phone_number: str) -> Dict[str, List[Union[Any, Dict[st
       ['key'][0] = url
       ['key'][1] = form
     """
-
     return {
         "brazino777": ["https://brazino777.com/api/register_new", {
             "bonus": "one_hundred_percent_on_first_deposit",
@@ -20,37 +19,6 @@ def get_dict(email: str, phone_number: str) -> Dict[str, List[Union[Any, Dict[st
             "password": password,
             "currency": "MXN"
         }],
-        "united-nations-news": ["", {
-        "u": "372753f560ef60c400f1a4f3f",
-        "id": "fdbf1af606",
-        "c": "jQuery19009144254332436061_1690067228881",
-        "EMAIL": email,
-        "FNAME": "John ",
-        "LNAME": "Denver",
-        "OCCUPATION": "Other",
-        "AGE": "20-30",
-        "group[577][1]": "1",
-        "group[577][2]": "2",
-        "group[577][4]": "4",
-        "group[577][256]": "256",
-        "group[577][512]": "512",
-        "group[577][8]": "8",
-        "group[577][1024]": "1024",
-        "group[577][2048]": "2048",
-        "group[577][4096]": "4096",
-        "group[577][8192]": "8192",
-        "group[577][16]": "16",
-        "group[577][16384]": "16384",
-        "group[673][32]": "32",
-        "group[673][64]": "64",
-        "group[673][128]": "128",
-        "group[673][32768]": "32768",
-        "EMAILTYPE": "html",
-        "b_372753f560ef60c400f1a4f3f_fdbf1af606": "",
-        "subscribe": "Subscribe",
-        "_": "1690067228882",
-        }
-        ],
         "graff-city": ["https://www.graff-city.com/register", {
             "form_identifier": "register",
             "csrf_token": "l2ATYO8I0Dx1ffm",
@@ -159,3 +127,15 @@ def get_dict(email: str, phone_number: str) -> Dict[str, List[Union[Any, Dict[st
             "email": email
         }]
     }
+    
+"""
+Email: tulmahitru@gufum.com
+Password: ksdfjdjfifjdf
+FirstName: El
+LastName: Papu
+PhoneNo: +50628901289
+UserSrcCatId: 4
+OrgName: OSTdio
+__RequestVerificationToken: CfDJ8Dty1nqi6PpChJszX2gO5wnkI7DTsgMmKWVEovhA23CVeVMOjNzqvbvHtERMIYKadTEkqGJZoI4fzb85x-s2homRsLukc91OEkKgT-9XzvxZeEskCBxb2kxIgGOkQw0aLpAkunJ9KUmV8hcjD7XxZaw
+6499BBDB: 8B8D05B1D5402C2DD69231F8F9FE66CA
+"""
