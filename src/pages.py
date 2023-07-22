@@ -1,4 +1,5 @@
 from typing import Any, Dict, List, Union
+import random
 
 password: str = "peneduro22"
 colombia_cities = ["Bogotá", "Medellín", "Cartagena", "Cali", "Barranquilla"]
@@ -125,17 +126,29 @@ def get_dict(email: str, phone_number: str) -> Dict[str, List[Union[Any, Dict[st
         }],
         "quora": ["https://es.quora.com/graphql/gql_POST?q=SignupEmailBasicInfoModal_sendSignupEmailConfirmationEmail_Mutation", {
             "email": email
+        }],
+        "nacc-th": ["https://itas.nacc.go.th/account/register", {
+            "Email": email,
+            "Password": "ksdfjdjfifjdf",
+            "FirstName": "El",
+            "LastName": "Papu",
+            "PhoneNo": f"{random.randint(1000000, 10000000) if not phone_number else phone_number}",
+            "UserSrcCatId": "4",
+            "OrgName": "OSTdio",
+            "__RequestVerificationToken": "CfDJ8Dty1nqi6PpChJszX2gO5wnkI7DTsgMmKWVEovhA23CVeVMOjNzqvbvHtERMIYKadTEkqGJZoI4fzb85x-s2homRsLukc91OEkKgT-9XzvxZeEskCBxb2kxIgGOkQw0aLpAkunJ9KUmV8hcjD7XxZaw",
+            "6499BBDB": "8B8D05B1D5402C2DD69231F8F9FE66CA"
         }]
+        
     }
     
 """
-Email: tulmahitru@gufum.com
-Password: ksdfjdjfifjdf
-FirstName: El
-LastName: Papu
-PhoneNo: +50628901289
-UserSrcCatId: 4
-OrgName: OSTdio
-__RequestVerificationToken: CfDJ8Dty1nqi6PpChJszX2gO5wnkI7DTsgMmKWVEovhA23CVeVMOjNzqvbvHtERMIYKadTEkqGJZoI4fzb85x-s2homRsLukc91OEkKgT-9XzvxZeEskCBxb2kxIgGOkQw0aLpAkunJ9KUmV8hcjD7XxZaw
-6499BBDB: 8B8D05B1D5402C2DD69231F8F9FE66CA
+"Email": "tulmahitru@gufum.com",
+"Password": "ksdfjdjfifjdf",
+"FirstName": "El",
+"LastName": "Papu",
+"PhoneNo": "+50628901289",
+"UserSrcCatId": "4",
+"OrgName": "OSTdio",
+"__RequestVerificationToken": "CfDJ8Dty1nqi6PpChJszX2gO5wnkI7DTsgMmKWVEovhA23CVeVMOjNzqvbvHtERMIYKadTEkqGJZoI4fzb85x-s2homRsLukc91OEkKgT-9XzvxZeEskCBxb2kxIgGOkQw0aLpAkunJ9KUmV8hcjD7XxZaw",
+"6499BBDB": "8B8D05B1D5402C2DD69231F8F9FE66CA
 """
