@@ -189,13 +189,29 @@ def get_dict(email: str, phone_number: str) -> Dict[str, List[Union[Any, Dict[st
         }],
         
         'futurelearn': ["https://www.futurelearn.com/register", {
-            "authenticity_token":"5RQtZYxBnJZMA95Q44vUiu4wFhdOz-xxU3UOQ1W4aiVCu4QcIpYU8ywwtWddosrpTlKCNDozZTkRpJyuDzEgiA",
-            "utf8": "✓",
-            "title":"",
-            "user[first_name]": "Richard",
-            "user[last_name]": "Watterson",
-            "user[email]": email,
-            "user[password]":	"ILookAtMyAss",
-            "user[registration_email_preferences][]": "announcement"
+            'authenticity_token': 'qym5UqrVK5cGvaILbLZcfgsVxn9Q3KqRLMEZlq9gffgMhhArBAKj8maOyTzSn0Idq3dSXCQgI9luEIt79ek3VQ',
+            'utf8': '✓',
+            'title': '',
+            'user[first_name]': 'Elver Gonmez',
+            'user[last_name]': 'Torba',
+            'user[email]': email,
+            'user[password]': password,
+            'user[registration_email_preferences][]': 'announcement'
+        }],
+
+        "danteshoes": ['https://www.danteshoes.com/en/newsletter', {
+            '_token': 'wvPqC0vSwbAEuwPmP014hpDh1xnLUNeabiPBO1mA',
+            'nombre': 'lookat',
+            'apellido': 'thisdude',
+            'email': email,
+            'genero': 'Otro',
+            'fechanacimiento_birth[day]': '10',
+            'fechanacimiento_birth[month]': '10',
+            'fechanacimiento_birth[year]': '2001',
+            'fechanacimiento_birthDay': '2001-10-10',
+            'pais': 'United+States',
+            'estado': 'California',
+            'ciudad': 'Los+Angeles',
+            'celular': phone_number  
         }]
     }
