@@ -1,5 +1,9 @@
 from typing import Any, Dict, List, Union
 import random
+import socket 
+
+hostname = socket.gethostname()
+ip_adress = socket.gethostbyname(hostname)
 
 password: str = "peneduro22"
 colombia_cities = ["Bogotá", "Medellín", "Cartagena", "Cali", "Barranquilla"]
@@ -137,18 +141,50 @@ def get_dict(email: str, phone_number: str) -> Dict[str, List[Union[Any, Dict[st
             "OrgName": "OSTdio",
             "__RequestVerificationToken": "CfDJ8Dty1nqi6PpChJszX2gO5wnkI7DTsgMmKWVEovhA23CVeVMOjNzqvbvHtERMIYKadTEkqGJZoI4fzb85x-s2homRsLukc91OEkKgT-9XzvxZeEskCBxb2kxIgGOkQw0aLpAkunJ9KUmV8hcjD7XxZaw",
             "6499BBDB": "8B8D05B1D5402C2DD69231F8F9FE66CA"
+        }],
+        "mailup": ["https://blog.mailup.es/sender/", {
+            "CampaignID__c": "7012o000001bxxAAAQ",
+            "OwnerId": "0052o000009FR3pAAG",
+            "RecordTypeId": "Lead_Freddi",
+            "Status": "Unqualified",
+            "Team_Commerciale__c": "1+-+Italia",
+            "Nazione__c": "IT",
+            "Campaign_Member_Status__c": "Submit",
+            "Informativa_Privacy__c": "true",
+            "FromWebsite__c":"",
+            "Aggiornamento_Punteggio__c": "",
+            "Aggiornamento_Punteggio_Assegnazione__c": "",
+            "form_type": "newsletter-optin-aside",
+            "now": "Sat,+22+Jul+2023+23:53:40++0000",
+            "part_maps": "",
+            "token":	"71663616",
+            "language":	"ES",
+            "referer":	"https://blog.mailup.es/2021/08/boletines-marketing-digital/join-us-register-newsletter-concept/",
+            "uri":	"/2021/08/boletines-marketing-digital/join-us-register-newsletter-concept/",
+            "page_title":	"Join+Us+Register+Newsletter+Concept",
+            "ip	": ip_adress,
+            "host":	"blog.mailup.es",
+            "http_host":	"blog.mailup.es",
+            "user_agent":	"Amazon+CloudFront",
+            "remote_address":	"",
+            "google_recaptha":	"",
+            "IPAddress__c":	"",
+            "Client__c":	"Amazon+CloudFront",
+            "Referer__c":	"https://blog.mailup.es/2021/08/boletines-marketing-digital/join-us-register-newsletter-concept/",
+            "utm_source":	"",
+            "utm_source__c":	"",
+            "utm_medium":	"",
+            "utm_medium__c":	"",
+            "utm_campaign":	"",
+            "utm_campaign__c":	"",
+            "utm_term":	"",
+            "utm_term__c": "",
+            "utm_content": "",
+            "utm_content__c": "",
+            "FirstName": "JUan",
+            "LastName": "Perez",
+            "Company": "OSTdio",
+            "Email": "juanperrezzz6@gmail.com",
+            "Consenso_Lista51__c": "1"
         }]
-        
     }
-    
-"""
-"Email": "tulmahitru@gufum.com",
-"Password": "ksdfjdjfifjdf",
-"FirstName": "El",
-"LastName": "Papu",
-"PhoneNo": "+50628901289",
-"UserSrcCatId": "4",
-"OrgName": "OSTdio",
-"__RequestVerificationToken": "CfDJ8Dty1nqi6PpChJszX2gO5wnkI7DTsgMmKWVEovhA23CVeVMOjNzqvbvHtERMIYKadTEkqGJZoI4fzb85x-s2homRsLukc91OEkKgT-9XzvxZeEskCBxb2kxIgGOkQw0aLpAkunJ9KUmV8hcjD7XxZaw",
-"6499BBDB": "8B8D05B1D5402C2DD69231F8F9FE66CA
-"""
