@@ -186,5 +186,5 @@ def get_dict(email: str, phone_number: str) -> Dict[str, List[Union[Any, Dict[st
             "Company": "OSTdio",
             "Email": email,
             "Consenso_Lista51__c": "1"
-        }],
+        }]
     }
