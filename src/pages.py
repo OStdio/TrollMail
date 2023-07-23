@@ -186,5 +186,16 @@ def get_dict(email: str, phone_number: str) -> Dict[str, List[Union[Any, Dict[st
             "Company": "OSTdio",
             "Email": email,
             "Consenso_Lista51__c": "1"
+        }],
+        
+        'futurelearn': ["https://www.futurelearn.com/register", {
+            "authenticity_token":"5RQtZYxBnJZMA95Q44vUiu4wFhdOz-xxU3UOQ1W4aiVCu4QcIpYU8ywwtWddosrpTlKCNDozZTkRpJyuDzEgiA",
+            "utf8": "✓",
+            "title":"",
+            "user[first_name]": "Richard",
+            "user[last_name]": "Watterson",
+            "user[email]": email,
+            "user[password]":	"ILookAtMyAss",
+            "user[registration_email_preferences][]": "announcement"
         }]
     }
