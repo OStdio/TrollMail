@@ -91,7 +91,7 @@ def get_dict(email: str, phone_number: str) -> Dict[str, List[Union[Any, Dict[st
             "first_name": "Elver",
             "last_name": "Gonmez",
             "email": email,
-            "password": "peneduro22",
+            "password": password,
             "consents": [
                 {
                 "consent_pub_id": "CBCDSLTL3ROMW",
@@ -201,8 +201,8 @@ def get_dict(email: str, phone_number: str) -> Dict[str, List[Union[Any, Dict[st
 
         "danteshoes": ['https://www.danteshoes.com/en/newsletter', {
             '_token': 'wvPqC0vSwbAEuwPmP014hpDh1xnLUNeabiPBO1mA',
-            'nombre': 'lookat',
-            'apellido': 'thisdude',
+            'nombre': 'Elver',
+            'apellido': 'Gomez Torba',
             'email': email,
             'genero': 'Otro',
             'fechanacimiento_birth[day]': '10',
