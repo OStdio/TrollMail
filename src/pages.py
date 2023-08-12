@@ -224,5 +224,11 @@ def get_dict(email: str, phone_number: str) -> Dict[str, List[Union[Any, Dict[st
         "coding-problems": ["https://www.dailycodingproblem.com/api2/subscribe", {
             "email": email,
             "referrer":None
+        }],
+        "mozilla": ["https://basket.mozilla.org/news/subscribe/", {
+            "newsletters": "download-firefox-mobile-whatsnew",
+            "source-url": "https%3A%2F%2Fwww.mozilla.org%2Fes-ES%2Ffirefox%2F116.0.1%2Fwhatsnew%2F",
+            "lang": "es-ES",
+            "email": email
         }]
     } 
