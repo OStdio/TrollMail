@@ -262,5 +262,10 @@ def get_dict(email: str, phone_number: str) -> Dict[str, List[Union[Any, Dict[st
             "mfsid":"c5bf6dd295585dba8cade6347cdf61bd",
             "submit_form":"1",
             "page_number":"1"
+        }],
+        "indiatoday": ["https://auth.indiatoday.in/validateinfo", {
+            "username":"pnjy437etn@happy2023year.com",
+            "type":"Email",
+            "formtype":"Email"
         }]
     } 
