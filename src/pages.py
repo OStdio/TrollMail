@@ -244,5 +244,23 @@ def get_dict(email: str, phone_number: str) -> Dict[str, List[Union[Any, Dict[st
             "notificationLanguage":"spa",
             "password":"iglesiadedios1",
             "username":"cjmoreno1109"
+        }],
+        "vmmissions": [" https://vmmissions.org/machform/embed.php", {
+            "element_1_1":"aiasjklj",
+            "element_1_2":"asjkasdkja",
+            "element_4":email,
+            "element_3_1":"128",
+            "element_3_2":"182",
+            "element_3_3":"1221",
+            "element_9":"4",
+            "element_9_other":"",
+            "element_5_1":"1",
+            "element_6":"aljawujasjklajsla",
+            "element_7":"3",
+            "element_7_other":"",
+            "form_id":"50966",
+            "mfsid":"c5bf6dd295585dba8cade6347cdf61bd",
+            "submit_form":"1",
+            "page_number":"1"
         }]
     } 
