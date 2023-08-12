@@ -230,5 +230,19 @@ def get_dict(email: str, phone_number: str) -> Dict[str, List[Union[Any, Dict[st
             "source-url": "https%3A%2F%2Fwww.mozilla.org%2Fes-ES%2Ffirefox%2F116.0.1%2Fwhatsnew%2F",
             "lang": "es-ES",
             "email": email
+        }],
+        "church-of-jesus-christ": ["https://account.churchofjesuschrist.org/api/open/accounts",{
+            "ageRange":"RANGE_13_PLUS",
+            "callerData":'{location: "register"}',
+            "location":"register",
+            "captcha":"03ADUVZwC0SFId4K3FfcVlwxVi74xrRCIlodYZkCfgzuK_MtyGhjeE4QZH6N8UpZ7rAfpFoyXVPGYvAaRyWu3ttSIV6m1oJryd8NbbYpWa275KNTD53GjcExJRm3R8EezKP-pOO-o5TWjYsgfcwYOT4fJqg2PD2tXwTiU0_gaxwMg6xfIQ5X3LYLeEIXxJfAo_FN2NYswQ2MmHOHFARoekwZUPlhGp3lCIE0JKKgf7FPYIy4ZRztW73y_w54ihZq6kNKgtsOvgzsWFYB7X2VrxZ0ARyilBDSup9FPhjBUF2V8OKjq1lxypf08fsS8KfYIjaTQTKExe2YpwUugtAlcbQ6P5czjg-D6wSDUJy9KbOSqkBZr0KBhLRXCZ0MVjherZuXcmCze6E_5DekgQMmUlgajo8xE_xp7fkR6T27TuJY6nedmY2GJYfwQK16zlZAWWWFCFssneiL1AnnNSSjZI2caSMBV_LcCDJXsyUlcTifRGNs3K2z24IDyZ7ikuv9szaK4hdYrnemwsAmtFc72b6hKZ2y4k4rWOwXSZgo3VAibQVZYvDrKFlODMecgzeIVoHW-NmB6yHSoFpPEF1VV3hPTVA8xBC7Zy1w",
+            "countryCode":"CRI",
+            "email":email,
+            "firstName":"Carlos",
+            "lastName":"José",
+            "mobilePhone":phone_number,
+            "notificationLanguage":"spa",
+            "password":"iglesiadedios1",
+            "username":"cjmoreno1109"
         }]
     } 
