@@ -267,5 +267,10 @@ def get_dict(email: str, phone_number: str) -> Dict[str, List[Union[Any, Dict[st
             "username":"pnjy437etn@happy2023year.com",
             "type":"Email",
             "formtype":"Email"
-        }]
+        }],
+        "osint industries": ["https://osint.industries/newsletter", {
+            "name": "john doe",
+            "email": email,
+            "InputRadio": "on"
+            }]
     } 
